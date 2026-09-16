@@ -41,3 +41,20 @@ Because only approximately **8.74% of transactions are fraudulent**, the project
 - Threshold selection increased fraud recall substantially compared with the default 0.50 decision threshold.
 
 [View project →](classification/credit-card-fraud-naive-bayes/)
+
+#### Customer Churn Prediction — Tree Ensembles
+
+Customer churn prediction using **Decision Tree, Random Forest, and Gradient Boosting** with leakage-safe preprocessing, stratified cross-validation, hyperparameter tuning, decision-threshold analysis, and feature interpretation.
+
+The project emphasizes generalization and the business trade-off between detecting more at-risk customers and limiting false retention alerts.
+
+**Highlights:**
+
+- Unrestricted Decision Tree exposed severe overfitting: train ROC-AUC 1.0000 vs. test ROC-AUC 0.6504.
+- Regularization improved test ROC-AUC to 0.8324 with recall 0.7594.
+- Tuned Random Forest reached ROC-AUC 0.8428 and precision 0.6678.
+- Tuned Gradient Boosting achieved the strongest test ROC-AUC: **0.8471**.
+- Out-of-fold threshold optimization raised Gradient Boosting recall from 0.5107 at the default threshold to 0.7246 at the max-F1 threshold.
+- Permutation importance identified `tenure`, `Contract`, and `InternetService` as the strongest predictive inputs.
+
+[View project →](classification/customer-churn-tree-ensembles/)
